@@ -1,0 +1,21 @@
+#@data/values
+---
+ingress:
+  domain: "e2e.haas-432.pez.vmware.com" 
+  contour_tls_namespace: projectcontour
+  contour_tls_secret: contour-tls
+concourse:
+  username: test
+  password: password
+harbor:
+  adminPassword: Harbor12345
+  diskSize: 50Gi
+argocd:
+  adminPassword: password
+registry:
+  dockerhub: docker.io
+psp:
+  cluster_role: 
+git:
+  account: tanzu-end-to-end
+  branch: main

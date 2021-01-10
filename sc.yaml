@@ -1,0 +1,11 @@
+allowVolumeExpansion: true
+apiVersion: storage.k8s.io/v1
+kind: StorageClass
+metadata:
+  creationTimestamp: "2021-01-09T14:25:46Z"
+  name: cluster-default
+parameters:
+  svStorageClass: pacific-gold-storage-policy
+provisioner: csi.vsphere.vmware.com
+reclaimPolicy: Delete
+volumeBindingMode: Immediate
