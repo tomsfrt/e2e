@@ -13,7 +13,7 @@ petclinic:
   tbs:
     namespace:
 commonSecrets:
-  harborDomain: 
+  harborDomain: harbor.e2e.haas-432.pez.vmware.com/
   harborUser: admin
   harborPassword: Harbor12345
   kubeconfigBuildServer:
