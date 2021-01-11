@@ -8,7 +8,8 @@ modules:
     - exercises/03-container-registry
     - exercises/04-service-catalog
     - exercises/05-cluster-management
-    - exercises/06-enterprise-observability
+    - exercises/06-network-virtualization
+    - exercises/07-enterprise-observability
     vars:
     - name: user_token
       value: FOO

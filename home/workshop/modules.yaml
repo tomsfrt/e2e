@@ -17,8 +17,8 @@ modules:
   exercises/05-cluster-management:
     name: Centralized Cluster Management
     exit_sign: Enterprise Observability
-  exercises/06-enterprise-observability:
+  exercises/06-network-virtualization:
+    name: Network Virtualization
+    exit_sign: Enterprise Observability
+  exercises/07-enterprise-observability:
     name: Enterprise Observability
-    exit_sign: Cross-Cloud Global Namespaces
-  exercises/07-global-namespaces:
-    name: Cross-Cloud Global Namespaces
