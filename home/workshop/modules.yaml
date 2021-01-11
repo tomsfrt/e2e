@@ -16,7 +16,7 @@ modules:
     exit_sign: Centralized Cluster Management
   exercises/05-cluster-management:
     name: Centralized Cluster Management
-    exit_sign: Enterprise Observability
+    exit_sign: Network Virtualization
   exercises/06-network-virtualization:
     name: Network Virtualization
     exit_sign: Enterprise Observability
