@@ -10,7 +10,7 @@ spec:
   vendor: tanzu.vmware.com
   difficulty: beginner
   duration: 30m
-  url: https://github.com/tanzu-end-to-end/end-to-end-workshop
+  url: https://github.com/tomsfrt/e2e
   authors:
   - Chris DeLashmutt <cdelashmutt@vmware.com>
   - Anand Rao <raoan@vmware.com>
