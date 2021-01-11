@@ -24,4 +24,9 @@ RUN curl -L -o /usr/local/bin/kp  https://github.com/vmware-tanzu/kpack-cli/rele
   chmod 755 /usr/local/bin/kp
 RUN curl -sSL "https://github.com/buildpacks/pack/releases/download/v0.14.2/pack-v0.14.2-linux.tgz" | sudo tar -C /usr/local/bin/ --no-same-owner -xzv pack
 RUN curl -sSL "https://github.com/concourse/concourse/releases/download/v6.7.1/fly-6.7.1-linux-amd64.tgz" |sudo tar -C /usr/local/bin/ --no-same-owner -xzv fly
+
+#Update CA Certs
+COPY ca-certs/*.crt /usr/share/pki/ca-trust-source/anchors/
+RUN update-ca-trust
+
 USER 1001

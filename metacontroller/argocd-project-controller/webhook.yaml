@@ -60,6 +60,8 @@ spec:
             secretKeyRef:
               name: controller-secrets
               key: argocd_host
+        - name: "PYTHONHTTPSVERIFY"
+          value: "0"
       volumes:
       - name: hooks
         configMap:

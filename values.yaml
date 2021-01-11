@@ -17,5 +17,5 @@ registry:
 psp:
   cluster_role: 
 git:
-  account: tanzu-end-to-end
-  branch: main
+  account: tomsfrt
+  branch: tom

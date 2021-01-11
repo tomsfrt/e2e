@@ -16,7 +16,7 @@ spec:
   - Anand Rao <raoan@vmware.com>
   content:
     image: #@ "harbor.{}/tanzu-e2e/eduk8s-e2e-workshop:latest".format(data.values.ingress.domain)
-    files: #@ "github.com/{}/end-to-end-workshop/home?ref={}".format(data.values.git.account,data.values.git.branch)
+    files: #@ "github.com/{}/e2e/home?ref={}".format(data.values.git.account,data.values.git.branch)
   session:
     env:
       - name: MYSQL_REGISTRY

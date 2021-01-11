@@ -25,6 +25,8 @@ spec:
         - name: hooks
           mountPath: /hooks
         env:
+          - name: "PYTHONHTTPSVERIFY"
+            value: "0"
           - name: HARBOR_USERNAME
             valueFrom:
               secretKeyRef:
