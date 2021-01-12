@@ -30,9 +30,7 @@ jobs:
         image_resource:
           type: registry-image
           source:
-            insecure_registries: 
-              - ((common-secrets.harborDomain))
-            repository: ((common-secrets.harborDomain))/dockerhub/library/adoptopenjdk
+            repository: ((common-secrets.harborDomain))/tanzu-e2e/adoptopenjdk
             tag: 11-jdk-hotspot
         inputs:
           - name: source-code
