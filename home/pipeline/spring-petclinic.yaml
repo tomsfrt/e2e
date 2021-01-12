@@ -121,52 +121,6 @@ jobs:
               sleep 120
 
 
-- name: continuous-deployment
-  public: true
-  serial: true
-  plan:
-    - get: spring-petclinic-image
-      trigger: true
-    - get: config-repo
-    - task: create-wavefront-event
-      params:
-        WAVEFRONT_API_TOKEN: ((petclinic.wavefrontApiToken))
-        WAVEFRONT_URL: ((petclinic.wavefrontUri))
-        WAVEFRONT_DEPLOY_EVENT_NAME: ((petclinic.wavefrontDeployEventName))
-      config:
-        platform: linux
-        image_resource:
-          type: docker-image
-          source:
-            repository: ((common-secrets.concourseHelperImage))
-            tag: latest
-        run:
-          path: /bin/bash
-          args:
-            - -c
-            - |
-              set -euo pipefail
-
-              START_TIME=$(date +%s000)
-              sleep 1
-              END_TIME=$(date +%s000)
-
-              curl \
-                -X POST \
-                --header "Content-Type: application/json" \
-                --header "Accept: application/json" \
-                --header "Authorization: Bearer ${WAVEFRONT_API_TOKEN}" \
-                -d "{
-                  \"name\": \"${WAVEFRONT_DEPLOY_EVENT_NAME}\",
-                  \"annotations\": {
-                    \"severity\": \"info\",
-                    \"type\": \"image deploy\",
-                    \"details\": \"new spring-petclinic image deployed\"
-                  },
-                  \"startTime\": "${START_TIME}",
-                  \"endTime\": "${END_TIME}"
-                }" "${WAVEFRONT_URL}/api/v2/event"
-
     - task: deploy-app
       params:
         KUBECONFIG_JSON: ((common-secrets.kubeconfigAppServer))
@@ -175,6 +129,7 @@ jobs:
         image_resource:
           type: docker-image
           source:
+            insecure_registries: [((common-secrets.harborDomain))]
             repository: ((common-secrets.concourseHelperImage))
             tag: latest
         inputs:
