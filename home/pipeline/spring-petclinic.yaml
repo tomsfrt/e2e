@@ -14,6 +14,7 @@ resources:
 - name: spring-petclinic-image
   type: docker-image
   source:
+    insecure_registries: [((common-secrets.harborDomain))]
     repository: ((petclinic.image))
     tag: latest
 
