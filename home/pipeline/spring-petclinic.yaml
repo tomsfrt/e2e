@@ -109,15 +109,17 @@ jobs:
               exists=$?
               set -e
               if [ $exists -eq 0 ]; then
-                kp image patch spring-petclinic \
+                kp image patch spring-petclinic \kp
                   --namespace ((petclinic.tbsNamespace)) \
-                  --local-path target/spring-petclinic-2.3.0.BUILD-SNAPSHOT.jar
+                  --local-path target/spring-petclinic-2.3.0.BUILD-SNAPSHOT.jar \
+                  --wait
               else
                 kp image create spring-petclinic \
                   --tag ((petclinic.image)) \
                   --cluster-builder demo-cluster-builder \
                   --namespace ((petclinic.tbsNamespace)) \
-                  --local-path target/spring-petclinic-2.3.0.BUILD-SNAPSHOT.jar
+                  --local-path target/spring-petclinic-2.3.0.BUILD-SNAPSHOT.jar \
+                  --wait
               fi
               sleep 120
 
