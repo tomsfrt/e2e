@@ -136,6 +136,7 @@ jobs:
         image_resource:
           type: docker-image
           source:
+            insecure_registries: [((common-secrets.harborDomain))]
             repository: ((common-secrets.concourseHelperImage))
             tag: latest
         inputs:
