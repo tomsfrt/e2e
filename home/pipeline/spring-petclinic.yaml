@@ -121,6 +121,13 @@ jobs:
               sleep 120
 
 
+- name: continuous-deployment
+  public: true
+  serial: true
+  plan:
+    - get: spring-petclinic-image
+      trigger: true
+    - get: config-repo
     - task: deploy-app
       params:
         KUBECONFIG_JSON: ((common-secrets.kubeconfigAppServer))
@@ -129,7 +136,6 @@ jobs:
         image_resource:
           type: docker-image
           source:
-            insecure_registries: [((common-secrets.harborDomain))]
             repository: ((common-secrets.concourseHelperImage))
             tag: latest
         inputs:
