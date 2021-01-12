@@ -110,16 +110,15 @@ jobs:
               if [ $exists -eq 0 ]; then
                 kp image patch spring-petclinic \
                   --namespace ((petclinic.tbsNamespace)) \
-                  --wait \
                   --local-path target/spring-petclinic-2.3.0.BUILD-SNAPSHOT.jar
               else
                 kp image create spring-petclinic \
                   --tag ((petclinic.image)) \
                   --cluster-builder demo-cluster-builder \
                   --namespace ((petclinic.tbsNamespace)) \
-                  --wait \
                   --local-path target/spring-petclinic-2.3.0.BUILD-SNAPSHOT.jar
               fi
+              sleep 120
 
 
 - name: continuous-deployment
