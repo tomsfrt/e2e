@@ -31,6 +31,7 @@ jobs:
           type: registry-image
           source:
             repository: ((common-secrets.harborDomain))/tanzu-e2e/adoptopenjdk
+            insecure_registries: [((common-secrets.harborDomain))]
             tag: 11-jdk-hotspot
         inputs:
           - name: source-code
