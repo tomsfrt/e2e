@@ -29,6 +29,8 @@ spec:
         value: #@ data.values.concourse.password
       - name: INGRESS_DOMAIN
         value: #@ data.values.ingress.domain
+      - name: PORTAL_API_URL
+        value: #@ "e2e-workshop-ui."+data.values.ingress.domain
     namespaces:
       budget: x-large
       limits:
