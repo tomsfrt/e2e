@@ -27,6 +27,8 @@ spec:
         value: #@ data.values.concourse.username
       - name: CONCOURSE_PASSWORD
         value: #@ data.values.concourse.password
+      - name: INGRESS_DOMAIN
+        value: #@ data.values.ingress.domain
     namespaces:
       budget: x-large
       limits:
