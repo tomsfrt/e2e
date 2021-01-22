@@ -46,6 +46,9 @@ spec:
         vendor: octant
       editor:
         enabled: true
+    dashboards:
+    - name: Whiteboard
+      url: https://excalidraw.com/
     objects:
     - apiVersion: rbac.authorization.k8s.io/v1
       kind: Role
