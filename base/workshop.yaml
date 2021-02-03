@@ -15,7 +15,7 @@ spec:
   - Chris DeLashmutt <cdelashmutt@vmware.com>
   - Anand Rao <raoan@vmware.com>
   content:
-    image: harbor.e2e.tsfrt.info
+    image: harbor.e2e.tsfrt.info/tanzu-e2e/eduk8s-e2e-workshop:latest
     files: #@ "github.com/{}/e2e/home?ref={}".format(data.values.git.account,data.values.git.branch)
   session:
     env:
